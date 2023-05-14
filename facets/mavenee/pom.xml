@@ -18,7 +18,7 @@
   		<maven.compiler.target>11</maven.compiler.target>
   		<maven.compiler.source>11</maven.compiler.source>
   		<failOnMissingWebXml>false</failOnMissingWebXml>
-  		<meveo.version>7.2.0-SNAPSHOT</meveo.version>
+  		<meveo.version>meveo.base.version</meveo.version>
   		<jakartaee.version>8.0.0</jakartaee.version>
   	</properties>
   
