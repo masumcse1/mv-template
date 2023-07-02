@@ -2,17 +2,12 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.meveo</groupId>
-    <artifactId>facets</artifactId>
-    <version>1.0.0</version>
-  </parent>
+
   <groupId>org.meveo</groupId>
   <artifactId>moduleartifactId</artifactId>
   <version>moduleversion</version>
   <packaging>war</packaging>
     
-  
   
   	<properties>
   		<maven.compiler.target>11</maven.compiler.target>
@@ -20,10 +15,9 @@
   		<failOnMissingWebXml>false</failOnMissingWebXml>
   		<meveo.version>meveo.base.version</meveo.version>
   		<jakartaee.version>8.0.0</jakartaee.version>
-  	</properties>
-  
+		<build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
+  	</properties> 
 
-  
   	<dependencies>
   	
   	         <dependency>
@@ -51,10 +45,51 @@
   
 	</dependencies>
   
-  
   <build>
-    <sourceDirectory>../java</sourceDirectory>
+		<finalName>${project.artifactId}</finalName>
+		
+		<plugins>
 
-     <finalName>${project.artifactId}</finalName>
-  </build>
+		<plugin>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>build-helper-maven-plugin</artifactId>
+			<version>${build-helper-maven-plugin.version}</version>
+			<executions>
+				<execution>
+					<id>add-source</id>
+					<phase>generate-sources</phase>
+					<goals>
+						<goal>add-source</goal>
+					</goals>
+					<configuration>
+						<sources>
+							<source>src/main/javaee</source>
+						</sources>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
+		</plugins>
+		
+	</build>
+	
+	  <repositories>
+    <repository>
+      <id>maven central</id>
+      <url>https://repo1.maven.org/maven2/</url>
+    </repository>
+    <repository>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>github</id>
+      <name>meveo github</name>
+      <url>https://smichea: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@maven.pkg.github.com/meveo-org/meveo</url>
+    </repository>
+    <repository>
+      <id>meveo-repo</id>
+      <url>http://localhost:8080/meveo/maven</url>
+    </repository>
+  </repositories>
+ 
 </project>
