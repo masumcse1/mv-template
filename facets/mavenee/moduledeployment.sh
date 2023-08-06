@@ -9,11 +9,11 @@ deploymnet_folder="$wildfy_home/standalone/deployments"
 temp_folder="$wildfy_home/standalone/databackup"
 temp_dir="$wildfy_home/standalone/databackup/temp"
 application_xml="META-INF/application.xml"
-xml_data="<module id="\"WAR.meveo.myproduct\""><web><web-uri>myproduct.war</web-uri> <context-root>/myproduct</context-root> </web></module>"
+xml_data="<module id="\"WAR.meveo.modulecode\""><web><web-uri>modulecode.war</web-uri> <context-root>/modulecode</context-root> </web></module>"
 
 ear_file="meveo.ear"
 new_ear_file="meveo.ear"
-module_war_file="myproduct.war"
+module_war_file="modulecode.war"
 
 ##-----------copy meveo.ear file into a temporary place-------------------------------------
 
