@@ -1,10 +1,8 @@
 #!/bin/bash
 
-#hardcoded : widlfy path,module name,server credentials, credentials issue -- no need pass
 
-USERNAME="masum"
-PASSWORD="Masum!2345"
-wildfy_home="/opt/alldata/wildfly-18.0.0.Final"
+
+wildfy_home="wildfypath"
 deployment_folder="$wildfy_home/standalone/deployments"
 temp_folder="$wildfy_home/standalone/databackup"
 temp_dir="$wildfy_home/standalone/databackup/temp"
